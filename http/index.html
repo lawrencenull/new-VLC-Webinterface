@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<!--  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - >
+<  index.html: VLC media player web interface
+< - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - >
+<  Copyright (C) 2005-2006 the VideoLAN team
+<  $Id$
+< 
+<  Authors: Antoine Cellerier <dionoea -at- videolan -dot- org>
+< 
+<  This program is free software; you can redistribute it and/or modify
+<  it under the terms of the GNU General Public License as published by
+<  the Free Software Foundation; either version 2 of the License, or
+<  (at your option) any later version.
+< 
+<  This program is distributed in the hope that it will be useful,
+<  but WITHOUT ANY WARRANTY; without even the implied warranty of
+<  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+<  GNU General Public License for more details.
+< 
+<  You should have received a copy of the GNU General Public License
+<  along with this program; if not, write to the Free Software
+<  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston MA 02110-1301, USA.
+< - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+  <title>VLC media player - Web Interface</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <!--[if IE ]>
+  <link href="iehacks.css" rel="stylesheet" type="text/css" />
+  <![endif]-->
+  <script type="text/javascript" src="js/functions.js"></script>
+  <!-- in case people had scripts that sent commands to the default
+       index.html page -->
+  <vlc id="control" param1="stop,pause,previous,next,add,sout,play,delete,empty,seek,fullscreen,keep,volume,sort,move" />
+  <vlc id="set" param1="sout" param2="string" />
+ </script>
+  <script src="video.js" type="text/javascript" charset="utf-8"></script>
+  <script type="text/javascript">
+    VideoJS.setupAllWhenReady();
+</script>
+  <link rel="stylesheet" href="video-js.css" type="text/css" media="screen" title="Video JS">
+</head>
+
+<body onload="loop_refresh();">
+
+<noscript>
+  <hr/>
+  <p>
+  Warning: Your browser doesn't support JavaScript.
+  </p>
+  <hr/>
+</noscript>
+
+</div>	
+  <div class="video-js-box">
+    <!-- Using the Video for Everybody Embed Code http://camendesign.com/code/video_for_everybody -->
+    <video id="example_video_1" class="video-js" width="640" height="264" controls="controls" preload="auto" poster="http://video-js.zencoder.com/oceans-clip.png">
+      <source src="http://localhost:8080/stream.ogg" type='audio/ogg; codecs="vorbis"' />
+      </video>
+      </div>
+ <vlc id="include" param1="dialogs/browse" />
+<vlc id="include" param1="dialogs/main" />
+<vlc id="include" param1="dialogs/input" />
+<vlc id="include" param1="dialogs/sout" />
+<vlc id="include" param1="dialogs/playlist" />
+<vlc id="include" param1="dialogs/footer" />
+<input type="button" value="Stream C:\\1.mp3" onclick="in_play1('C:\\1.mp3')">
+
+ 
+  <div id="foo">
+  </div>
+</body>
+
+</html>
